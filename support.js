@@ -4,6 +4,34 @@
 (function(){
     var app=angular.module("gemStore",[]);
 
+    //create custume element directive to load information from a separate html into our main html
+    app.directive('productDescription',function(){
+       return {
+          restrict: 'E',
+            templateUrl: "product-description.html"
+       } ;
+
+    });
+
+    //create custome attribute directive to load information
+    app.directive('productSpecs',function(){
+       return {
+           restrict:'A',
+           templateUrl:"product-specs.html"
+       }
+
+    });
+
+    //create custome element directive to load information
+    app.directive('productReview',function(){
+       return {
+          restrict:'E',
+           templateUrl:"product-review.html"
+       } ;
+    });
+
+
+
     app.controller('ReviewController',function(){
         this.review={};
         this.addReview=function(product){
