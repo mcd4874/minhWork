@@ -1,0 +1,22 @@
+<section >
+    <ul class=" information">
+        <li ng-class="{active:pane.isTab(1)}">
+            <a href ng-click="pane.selectTab(1)">Description</a>
+        </li>
+        <li ng-class="{active:pane.isTab(2)}">
+            <a href ng-click="pane.selectTab(2)">Specification</a>
+        </li>
+        <li ng-class="{active:pane.isTab(3)}">
+            <a href ng-click="pane.selectTab(3)">Review</a>
+        </li>
+    </ul>
+    <!-- use ng-include example instead of applying the own custome element directive-->
+    <div class="panel" ng-show="pane.tab==1" ng-include="'product-description.html'" ></div>
+
+    <!-- create our own custome directive with Attribute(example) and this is different than element directive-->
+    <div product-specs="" class="panel" ng-show="pane.tab==2"></div >
+
+    <!-- Review tab content-->
+    <!-- create own custome directive with Element(example)-->
+    <product-review class="panel" ng-show="pane.tab==3"> </product-review>
+</section>

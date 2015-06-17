@@ -2,33 +2,7 @@
  * Created by minh on 6/6/2015.
  */
 (function(){
-    var app=angular.module("gemStore",[]);
-
-    //create custume element directive to load information from a separate html into our main html
-    app.directive('productDescription',function(){
-       return {
-          restrict: 'E',
-            templateUrl: "product-description.html"
-       } ;
-
-    });
-
-    //create custome attribute directive to load information
-    app.directive('productSpecs',function(){
-       return {
-           restrict:'A',
-           templateUrl:"product-specs.html"
-       }
-
-    });
-
-    //create custome element directive to load information
-    app.directive('productReview',function(){
-       return {
-          restrict:'E',
-           templateUrl:"product-review.html"
-       } ;
-    });
+    var app=angular.module("gemStore",['store-product']);
 
 
 
@@ -41,7 +15,7 @@
         };
     });
 
-    app.controller('PaneController',function(){
+    /*app.controller('PaneController',function(){
        this.tab=1;
         this.selectTab=function(Tab){
             this.tab=Tab;
@@ -49,7 +23,7 @@
         this.isTab=function(checkTab){
           return this.tab===checkTab;
         };
-    });
+    });*/
     app.controller('storeControl',function(){
         this.product=gem;
     });
