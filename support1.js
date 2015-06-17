@@ -1,7 +1,7 @@
 /**
  * Created by minh on 6/16/2015.
  */
-/** support for just product*/
+/** support for just product make*/
 (function(){
     var app=angular.module('store-product',[]);
 
